@@ -2,11 +2,14 @@
 ```
  gen.add("name",int_t,0,"An Integer parameter",50,0,100)
 ```
-順に, パラメータ名,型(int_t/double_t/str_t/bool_tのどれか)
-
-level(dynamicRecongigureがコールバック時にこの値を返すらしい？),説明,default(50),min(0),max(100)
-
-となっている
+gen.addでパラメータを追加していきます。パラメータの意味はそれぞれ以下のようになっています。
+- パラメータ名(`name`)
+- 型(`int_t/double_t/str_t/bool_tのどれか`)
+- level(`dynamicRecongigureがコールバック時にこの値を返すらしい？`)
+- 説明(`An Integer parameter`)
+- 初期値(`50`)
+- 最小値(`0`)
+- 最大値(`100`)
 
 ↓のようにするとプルダウンでの変更もできる
 ```
@@ -21,7 +24,7 @@ level(dynamicRecongigureがコールバック時にこの値を返すらしい�
  gen.add("size", int_t, 0, "A size parameter which is edited via an enum", 1, 0, 3, edit_method=size_enum)
 ```
 
-最終行では第2引数はパッケージ名、第3引数はこのファイル名から拡張子を除いた物に
+最終行では第2引数はパッケージ名、第3第3引数はこのファイル名から拡張子を除いた物にする
 ```
  exit(gen.generate(PACKAGE, "rqt_reconfigure_tutorial", "sample"))
 ```
