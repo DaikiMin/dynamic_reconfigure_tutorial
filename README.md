@@ -6,14 +6,14 @@
 Dynamic Reconfigureパッケージを使うことで、プログラム実行中でも、変更することができます。
 
 ## Getting started
-- はじめに
+
 rqt_reconfigureが使えるようになっていること
 
 ※ROSをdesktopfullで入れた場合はすでにインストールされているはず
 
 心配な方は…
 ```
-$ sudo apt install ros-kinetic-rqt-reconfigure
+$ sudo apt install ros-$ROS_DISTRO-rqt-reconfigure
 ```
 
 でインストールしてください
