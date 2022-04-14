@@ -1,4 +1,4 @@
-# rqt_reconfigure_tutorial
+# Dynamic Reconfigure Tutorial
 
 動的にパラメータを変更できるrqt_reconfigureのチュートリアル
 
