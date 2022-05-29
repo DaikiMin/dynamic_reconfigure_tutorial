@@ -64,7 +64,7 @@ $ rosrun rqt_reconfigure rqt_reconfigure
 ```bash
 $ roslaunch rqt_reconfigure_tutorial reconfigure_node.launch
 ```
-- [reconfigure_node.launch)](launch/reconfigure_node.launch)
+- [reconfigure_node.launch](launch/reconfigure_node.launch)
 
   #### 初期値をrosparamで変更
   cfgファイルの初期値は、node起動時のrosparamで更新可能です。
