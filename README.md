@@ -59,6 +59,10 @@ $ rosrun rqt_reconfigure_tutorial reconfigure_node
 $ rosrun rqt_reconfigure rqt_reconfigure
 ```
 
+### 初期値をrosparamで変更
+cfgファイルの初期値は、node起動時のrosparamで更新可能です。
+- [sample.yaml](param/sample.yaml)
+
 ## reference
 「ROS講座28 Dynamic Reconfigureを使う」
 > https://qiita.com/srs/items/3adcc5898955a6aa1631

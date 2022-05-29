@@ -1,0 +1,5 @@
+int_param : 0
+double_param : 0.5
+str_param : Hello World
+bool_param : True
+size : 0    # Small : 0, Medium : 1, Large : 2, ExtraLarge : 3
