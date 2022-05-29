@@ -50,6 +50,7 @@ generate_dynamic_reconfigure_options(
 ```
 
 ## How to use
+### rosrunで起動する場合
 - パラメータを変更される側
 ```
 $ rosrun rqt_reconfigure_tutorial reconfigure_node
@@ -59,9 +60,15 @@ $ rosrun rqt_reconfigure_tutorial reconfigure_node
 $ rosrun rqt_reconfigure rqt_reconfigure
 ```
 
-### 初期値をrosparamで変更
-cfgファイルの初期値は、node起動時のrosparamで更新可能です。
-- [sample.yaml](param/sample.yaml)
+### roslaunchで起動する場合
+```bash
+$ roslaunch rqt_reconfigure_tutorial reconfigure_node.launch
+```
+- [reconfigure_node.launch)](launch/reconfigure_node.launch)
+
+  #### 初期値をrosparamで変更
+  cfgファイルの初期値は、node起動時のrosparamで更新可能です。
+  - [sample.yaml](param/sample.yaml)
 
 ## reference
 「ROS講座28 Dynamic Reconfigureを使う」
