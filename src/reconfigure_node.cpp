@@ -24,6 +24,21 @@ void rqt_reconfigure_tutorial::DynamicReconfigureTemlate::callback(rqt_reconfigu
     ROS_INFO("stringParam Request: %s", config.str_param.c_str());
     ROS_INFO("boolParam Request: %s",config.bool_param ? "True" : "False");
     ROS_INFO("Reconfigure Request: %d",config.size);
+    std::cout << "--------------------------\n[Group]" << std::endl;
+    ROS_INFO("intParam Request: %d", config.group_int_param);
+    ROS_INFO("doubleParam Request: %f", config.group_double_param);
+    ROS_INFO("stringParam Request: %s", config.group_str_param.c_str());
+    ROS_INFO("boolParam Request: %s",config.group_bool_param ? "True" : "False");
+    std::cout << "--------------------------\n[Sub Group]" << std::endl;
+    ROS_INFO("intParam Request: %d", config.sub_group_int_param);
+    ROS_INFO("doubleParam Request: %f", config.sub_group_double_param);
+    ROS_INFO("stringParam Request: %s", config.sub_group_str_param.c_str());
+    ROS_INFO("boolParam Request: %s",config.sub_group_bool_param ? "True" : "False");
+    std::cout << "--------------------------\n[Sub Sub Group]" << std::endl;
+    ROS_INFO("intParam Request: %d", config.sub_sub_group_int_param);
+    ROS_INFO("doubleParam Request: %f", config.sub_sub_group_double_param);
+    ROS_INFO("stringParam Request: %s", config.sub_sub_group_str_param.c_str());
+    ROS_INFO("boolParam Request: %s",config.sub_sub_group_bool_param ? "True" : "False");
     std::cout << "==========================" << std::endl;
 }
 

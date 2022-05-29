@@ -3,3 +3,18 @@ double_param : 0.5
 str_param : Hello World
 bool_param : True
 size : 0    # Small : 0, Medium : 1, Large : 2, ExtraLarge : 3
+
+group_int_param : 0
+group_double_param : 0.5
+group_str_param : Hello World
+group_bool_param : True
+
+sub_group_int_param : 0
+sub_group_double_param : 0.5
+sub_group_str_param : Hello World
+sub_group_bool_param : True
+
+sub_sub_group_int_param : 0
+sub_sub_group_double_param : 0.5
+sub_sub_group_str_param : Hello World
+sub_sub_group_bool_param : True
