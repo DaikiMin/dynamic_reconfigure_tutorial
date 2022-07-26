@@ -1,6 +1,6 @@
 #include <ros/ros.h>
 #include <dynamic_reconfigure/server.h>
-#include <rqt_reconfigure_tutorial/sampleConfig.h>
+#include <rqt_reconfigure_tutorial/SampleConfig.h>
 #include <iostream>
 
 namespace rqt_reconfigure_tutorial {
@@ -8,16 +8,16 @@ namespace rqt_reconfigure_tutorial {
         private:
             ros::NodeHandle nh_;
             ros::NodeHandle pnh_;
-            dynamic_reconfigure::Server<rqt_reconfigure_tutorial::sampleConfig>* server_;
-            dynamic_reconfigure::Server<rqt_reconfigure_tutorial::sampleConfig>::CallbackType f_;
-            void callback(rqt_reconfigure_tutorial::sampleConfig& config, uint32_t level);
+            dynamic_reconfigure::Server<rqt_reconfigure_tutorial::SampleConfig>* server_;
+            dynamic_reconfigure::Server<rqt_reconfigure_tutorial::SampleConfig>::CallbackType f_;
+            void callback(rqt_reconfigure_tutorial::SampleConfig& config, uint32_t level);
 
         public:
             DynamicReconfigureTemlate( );
     };
 }
 
-void rqt_reconfigure_tutorial::DynamicReconfigureTemlate::callback(rqt_reconfigure_tutorial::sampleConfig& config, uint32_t level){
+void rqt_reconfigure_tutorial::DynamicReconfigureTemlate::callback(rqt_reconfigure_tutorial::SampleConfig& config, uint32_t level){
     std::cout << "==========================" << std::endl;
     ROS_INFO("intParam Request: %d", config.int_param);
     ROS_INFO("doubleParam Request: %f", config.double_param);
@@ -43,7 +43,7 @@ void rqt_reconfigure_tutorial::DynamicReconfigureTemlate::callback(rqt_reconfigu
 }
 
 rqt_reconfigure_tutorial::DynamicReconfigureTemlate::DynamicReconfigureTemlate( ) : nh_(), pnh_("~") {
-    server_ = new dynamic_reconfigure::Server<rqt_reconfigure_tutorial::sampleConfig>(pnh_);            // このとき初期値がrosparamで変更される
+    server_ = new dynamic_reconfigure::Server<rqt_reconfigure_tutorial::SampleConfig>(pnh_);            // このとき初期値がrosparamで変更される
     f_ = boost::bind(&rqt_reconfigure_tutorial::DynamicReconfigureTemlate::callback, this, _1, _2);     // dynamic_reconfigureのコールバック関数を指定
     server_->setCallback(f_);
 }
