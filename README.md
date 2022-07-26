@@ -1,12 +1,9 @@
 # Dynamic Reconfigure Tutorial
 
-動的にパラメータを変更できるrqt_reconfigureのチュートリアル
-
-## rqt_reconfigureとは?
-Dynamic Reconfigureパッケージを使うことで、プログラム実行中でも、パラメータ変更することができます。
+Dynamic Reconfigureのチュートリアル
+rqt_reconfigureパッケージを使うことで、プログラム実行中でも、パラメータ変更することができます。
 
 ## Getting started
-
 rqt_reconfigureが使えるようになっていること
 
 ※ROSをdesktopfullで入れた場合はすでにインストールされているはず
@@ -15,7 +12,6 @@ rqt_reconfigureが使えるようになっていること
 ```
 $ sudo apt install ros-$ROS_DISTRO-rqt-reconfigure
 ```
-
 でインストールしてください
 
 ## 下準備
