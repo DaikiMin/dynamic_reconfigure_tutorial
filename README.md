@@ -27,7 +27,7 @@ $ sudo apt install ros-$ROS_DISTRO-rqt-reconfigure
 本パッケージのcfgディレクトリに、`○○○.cfg`として生成してください
 ## 実行フラグの設定
 ```
- $ roscd rqt_reconfigure_tutorial/cfg
+ $ roscd dynamic_reconfigure_tutorial/cfg
  $ chmod a+x Sample.cfg
 ```
 
@@ -77,14 +77,14 @@ gen.addでパラメータを追加していきます。パラメータの意味�
 
 最終行では第2引数はパッケージ名、第3第3引数はこのファイル名から拡張子を除いた物にすること
 ```
- exit(gen.generate(PACKAGE, "rqt_reconfigure_tutorial", "Sample"))
+ exit(gen.generate(PACKAGE, "dynamic_reconfigure_tutorial", "Sample"))
 ```
 
 ## How to use
 ### rosrunで起動する場合
 - パラメータを変更される側
 ```
-$ rosrun rqt_reconfigure_tutorial reconfigure_node
+$ rosrun dynamic_reconfigure_tutorial reconfigure_node
 ```
 - GUIでパラメータを変更
 ```
@@ -93,7 +93,7 @@ $ rosrun rqt_reconfigure rqt_reconfigure
 
 ### roslaunchで起動する場合
 ```bash
-$ roslaunch rqt_reconfigure_tutorial reconfigure_node.launch
+$ roslaunch dynamic_reconfigure_tutorial reconfigure_node.launch
 ```
 - [reconfigure_node.launch](launch/reconfigure_node.launch)
 
