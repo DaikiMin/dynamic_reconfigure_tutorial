@@ -1,7 +1,7 @@
 <launch>
-    <group ns = "rqt_reconfigure_tutorial">
-        <node pkg="rqt_reconfigure_tutorial" type="reconfigure_node" name="reconfigure_node" output="screen">
-            <rosparam file="$(find rqt_reconfigure_tutorial)/param/sample.yaml" command="load"/>
+    <group ns = "dynamic_reconfigure_tutorial">
+        <node pkg="dynamic_reconfigure_tutorial" type="reconfigure_node" name="reconfigure_node" output="screen">
+            <rosparam file="$(find dynamic_reconfigure_tutorial)/param/sample.yaml" command="load"/>
         </node>
     </group>
 
