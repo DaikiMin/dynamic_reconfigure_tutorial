@@ -3,7 +3,7 @@
 動的にパラメータを変更できるrqt_reconfigureのチュートリアル
 
 ## rqt_reconfigureとは?
-Dynamic Reconfigureパッケージを使うことで、プログラム実行中でも、変更することができます。
+Dynamic Reconfigureパッケージを使うことで、プログラム実行中でも、パラメータ変更することができます。
 
 ## Getting started
 
@@ -25,6 +25,36 @@ $ sudo apt install ros-$ROS_DISTRO-rqt-reconfigure
 
 ## cfgファイルの制作
 本パッケージのcfgディレクトリに、`○○○.cfg`として生成してください
+  - [Sample.cfg](cfg/Sample.cfg)
+
+### cfgファイルの書き方
+```
+ gen.add("name",int_t,0,"An Integer parameter",50,0,100)
+```
+gen.addでパラメータを追加していきます。パラメータの意味はそれぞれ以下のようになっています。
+- パラメータ名(`name`)
+- 型(`int_t/double_t/str_t/bool_tの`どれか)
+- level(`dynamicRecongigureがコールバック時にこの値を返すらしい？`)
+- 説明(`An Integer parameter`)
+- 初期値(`50`)
+- 最小値(`0`)
+- 最大値(`100`)
+
+↓のようにするとプルダウンでの変更もできます
+```
+ size_enum = gen.enum([ gen.const("Small", int_t, 0, "A small constant"),
+                  gen.const("Medium", int_t, 1, "A medium constant"),
+                  gen.const("Large", int_t, 2, "A large constant"),
+                  gen.const("ExtraLarge", int_t, 3, "An extra large constant") ],
+                  "An enum to set size")
+ gen.add("size", int_t, 0, "A size parameter which is edited via an enum", 1, 0, 3, edit_method=size_enum)
+```
+
+最終行では第2引数はパッケージ名、第3第3引数はこのファイル名から拡張子を除いた物にすること
+```
+ exit(gen.generate(PACKAGE, "dynamic_reconfigure_tutorial", "Sample"))
+```
+
 ## 実行フラグの設定
 ```
  $ roscd dynamic_reconfigure_tutorial/cfg
@@ -47,37 +77,6 @@ find_package(catkin REQUIRED COMPONENTS
 generate_dynamic_reconfigure_options(
   cfg/Sample.cfg
 )
-```
-
-## cfgファイルに書くパラメータについて
-```
- gen.add("name",int_t,0,"An Integer parameter",50,0,100)
-```
-gen.addでパラメータを追加していきます。パラメータの意味はそれぞれ以下のようになっています。
-- パラメータ名(`name`)
-- 型(`int_t/double_t/str_t/bool_tの`どれか)
-- level(`dynamicRecongigureがコールバック時にこの値を返すらしい？`)
-- 説明(`An Integer parameter`)
-- 初期値(`50`)
-- 最小値(`0`)
-- 最大値(`100`)
-
-↓のようにするとプルダウンでの変更もできます
-```
- size_enum = gen.enum([ gen.const("Small", int_t, 0, "A small constant"),
-                  gen.const("Medium", int_t, 1, "A medium constant"),
-                  gen.const("Large", int_t, 2, "A large constant"),
-                  gen.const("ExtraLarge", int_t, 3, "An extra large constant") ],
-                  "An enum to set size")
-```
-
-```
- gen.add("size", int_t, 0, "A size parameter which is edited via an enum", 1, 0, 3, edit_method=size_enum)
-```
-
-最終行では第2引数はパッケージ名、第3第3引数はこのファイル名から拡張子を除いた物にすること
-```
- exit(gen.generate(PACKAGE, "dynamic_reconfigure_tutorial", "Sample"))
 ```
 
 ## How to use
