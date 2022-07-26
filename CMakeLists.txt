@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(rqt_reconfigure_tutorial)
+project(dynamic_reconfigure_tutorial)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -53,7 +53,7 @@ generate_dynamic_reconfigure_options(
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES rqt_reconfigure_tutorial
+#  LIBRARIES dynamic_reconfigure_tutorial
 #  CATKIN_DEPENDS dynamic_reconfigure roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
@@ -71,7 +71,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/rqt_reconfigure_tutorial.cpp
+#   src/${PROJECT_NAME}/dynamic_reconfigure_tutorial.cpp
 # )
 
 # c++ ROSノードの追加
