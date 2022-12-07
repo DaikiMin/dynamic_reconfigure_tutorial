@@ -3,6 +3,10 @@
 Dynamic Reconfigureのチュートリアル
 rqt_reconfigureパッケージを使うことで、プログラム実行中でも、パラメータ変更することができます。
 
+<div align="center">
+    <img src="img/rqt_reconfigure.png" width="1080">
+</div>
+
 ## Getting started
 rqt_reconfigureが使えるようになっていること
 
