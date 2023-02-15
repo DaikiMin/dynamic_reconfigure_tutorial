@@ -31,14 +31,17 @@ $ sudo apt install ros-$ROS_DISTRO-rqt-reconfigure
 ```
  gen.add("name",int_t,0,"An Integer parameter",50,0,100)
 ```
-gen.addでパラメータを追加していきます。パラメータの意味はそれぞれ以下のようになっています。
-- パラメータ名(`name`)
-- 型(`int_t/double_t/str_t/bool_tの`どれか)
-- level(`dynamicRecongigureがコールバック時にこの値を返すらしい？`)
-- 説明(`An Integer parameter`)
-- 初期値(`50`)
-- 最小値(`0`)
-- 最大値(`100`)
+gen.addでパラメータを追加していきます。引数の意味はそれぞれ以下のようになっています。
+
+|引数|意味|
+|---|---|
+|`name`|パラメータ名|
+|`type` |パラメータの型(`int_t/double_t/str_t/bool_t`のどれか)|
+|`level`|dynamic reconfigureコールバックに渡されるビットマスク|
+|`description`|パラメータに関する説明|
+|`default`|初期値|
+|`min`|最小値(strとboolは不要)|
+|`max`|最大値(strとboolは不要)|
 
 ↓のようにするとプルダウンでの変更もできます
 ```
